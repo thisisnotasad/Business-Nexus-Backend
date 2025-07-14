@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const cors = require('cors');
 const userRoutes = require('./routes/users');
 const requestRoutes = require('./routes/requests');
 const messageRoutes = require('./routes/messages');
@@ -10,6 +11,11 @@ dotenv.config();
 
 // Create Express app
 const app = express();
+app.use(cors({
+  origin: ['http://localhost:5173', 'https://business-nexus-phi.vercel.app'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type']
+}));
 app.use(express.json()); // Parse JSON bodies
 
 // Connect to MongoDB
