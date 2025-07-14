@@ -12,7 +12,7 @@ dotenv.config();
 // Create Express app
 const app = express();
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://business-nexus-phi.vercel.app'],
+  origin: ['http://localhost:5173', 'https://business-nexus-phi.vercel.app','https://business-nexuss.netlify.app'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type']
 }));
