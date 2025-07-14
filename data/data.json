@@ -1,0 +1,243 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "john@investor.com",
+      "password": "Invest123!",
+      "role": "investor",
+      "bio": "Venture capitalist with a passion for tech startups",
+      "interests": [
+        "AI",
+        "FinTech"
+      ],
+      "portfolio": [
+        "Company A",
+        "Company B"
+      ],
+      "avatar": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "2",
+      "name": "Sarah Wilson",
+      "email": "sarah@entrepreneur.com",
+      "password": "Startup456!",
+      "role": "entrepreneur",
+      "bio": "Founder of HealthAI",
+      "startupName": "HealthAI",
+      "startupDescription": "AI-driven healthcare solutions",
+      "fundingNeed": 500000,
+      "pitchDeck": "https://example.com/pitch.pdf",
+      "industry": "HealthTech",
+      "stage": "Seed",
+      "teamSize": 5,
+      "traction": "10k users",
+      "location": "San Francisco",
+      "avatar": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "3",
+      "name": "Jane Smith",
+      "email": "jane@investor.com",
+      "password": "Invest456!",
+      "role": "investor",
+      "bio": "Investor in sustainable tech",
+      "interests": [
+        "GreenTech",
+        "HealthTech"
+      ],
+      "portfolio": [
+        "EcoStartup"
+      ],
+      "avatar": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "4",
+      "name": "Mike Brown",
+      "email": "mike@entrepreneur.com",
+      "password": "Startup789!",
+      "role": "entrepreneur",
+      "bio": "Building FinTech solutions",
+      "startupName": "PaySmart",
+      "startupDescription": "Next-gen payment platform",
+      "fundingNeed": 750000,
+      "pitchDeck": "https://example.com/pay.pdf",
+      "industry": "FinTech",
+      "stage": "Series A",
+      "teamSize": 8,
+      "traction": "50k transactions",
+      "location": "New York",
+      "avatar": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "5",
+      "name": "Alice Johnson",
+      "email": "alice@investor.com",
+      "password": "Invest789!",
+      "role": "investor",
+      "bio": "Early-stage investor",
+      "interests": [
+        "EdTech",
+        "AI"
+      ],
+      "portfolio": [
+        "LearnEasy"
+      ],
+      "avatar": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "6",
+      "name": "Bob Lee",
+      "email": "bob@entrepreneur.com",
+      "password": "Startup123!",
+      "role": "entrepreneur",
+      "bio": "Founder of EduPlatform",
+      "startupName": "EduPlatform",
+      "startupDescription": "Online learning platform",
+      "fundingNeed": 300000,
+      "pitchDeck": "https://example.com/edu.pdf",
+      "industry": "EdTech",
+      "stage": "Pre-Seed",
+      "teamSize": 3,
+      "traction": "5k users",
+      "location": "Boston",
+      "avatar": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "7",
+      "name": "Emma Davis",
+      "email": "emma@investor.com",
+      "password": "Invest101!",
+      "role": "investor",
+      "bio": "Focused on biotech startups",
+      "interests": [
+        "BioTech",
+        "HealthTech"
+      ],
+      "portfolio": [
+        "BioCure"
+      ],
+      "avatar": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "8",
+      "name": "Tom Clark",
+      "email": "tom@entrepreneur.com",
+      "password": "Startup202!",
+      "role": "entrepreneur",
+      "bio": "Building green energy solutions",
+      "startupName": "GreenWave",
+      "startupDescription": "Renewable energy platform",
+      "fundingNeed": 1000000,
+      "pitchDeck": "https://example.com/green.pdf",
+      "industry": "GreenTech",
+      "stage": "Series A",
+      "teamSize": 10,
+      "traction": "100 MW installed",
+      "location": "Austin",
+      "avatar": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "9",
+      "name": "Lisa White",
+      "email": "lisa@investor.com",
+      "password": "Invest303!",
+      "role": "investor",
+      "bio": "Angel investor in tech",
+      "interests": [
+        "FinTech",
+        "SaaS"
+      ],
+      "portfolio": [
+        "PayNow"
+      ],
+      "avatar": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "10",
+      "name": "Sam Green",
+      "email": "sam@entrepreneur.com",
+      "password": "Startup404!",
+      "role": "entrepreneur",
+      "bio": "Founder of FoodTech",
+      "startupName": "FoodTech",
+      "startupDescription": "Sustainable food delivery",
+      "fundingNeed": 400000,
+      "pitchDeck": "https://example.com/food.pdf",
+      "industry": "FoodTech",
+      "stage": "Seed",
+      "teamSize": 6,
+      "traction": "20k orders",
+      "location": "Chicago",
+      "avatar": "https://via.placeholder.com/150"
+    }
+  ],
+  "requests": [
+    {
+      "id": "1",
+      "investorId": 1,
+      "entrepreneurId": 2,
+      "investorName": "John Doe",
+      "profileSnippet": "Interested in your startup",
+      "status": "Accepted"
+    },
+    {
+      "id": "2",
+      "investorId": 3,
+      "entrepreneurId": 2,
+      "investorName": "Jane Smith",
+      "profileSnippet": "Excited about HealthAI",
+      "status": "Accepted"
+    },
+    {
+      "id": "3",
+      "investorId": 1,
+      "entrepreneurId": 4,
+      "investorName": "John Doe",
+      "profileSnippet": "Interested in PaySmart",
+      "status": "Pending"
+    },
+    {
+      "id": "4",
+      "investorId": 3,
+      "entrepreneurId": 4,
+      "investorName": "Jane Smith",
+      "profileSnippet": "Exploring FinTech",
+      "status": "Rejected"
+    },
+    {
+      "id": "5",
+      "investorId": 5,
+      "entrepreneurId": 2,
+      "investorName": "Alice Johnson",
+      "profileSnippet": "Interested in HealthAI",
+      "status": "Rejected"
+    },
+    {
+      "id": "6",
+      "investorId": 7,
+      "entrepreneurId": 2,
+      "investorName": "Emma Davis",
+      "profileSnippet": "Excited about healthcare solutions",
+      "status": "Accepted"
+    }
+  ],
+  "messages": [
+    {
+      "id": "1",
+      "chatId": "1-2",
+      "senderId": 1,
+      "senderName": "John Doe",
+      "text": "Hi Sarah, interested in HealthAI!",
+      "timestamp": "2025-07-12T00:30:00Z"
+    },
+    {
+      "id": "2",
+      "chatId": "1-2",
+      "senderId": 2,
+      "senderName": "Sarah Wilson",
+      "text": "Thanks, John! Let's discuss details.",
+      "timestamp": "2025-07-12T00:35:00Z"
+    }
+  ]
+}
