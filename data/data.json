@@ -15,7 +15,14 @@
         "Company A",
         "Company B"
       ],
-      "avatar": "https://via.placeholder.com/150"
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150",
+      "location": "San Francisco",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/johndoe",
+        "twitter": "https://twitter.com/johndoe",
+        "website": "https://johndoe.com"
+      },
+      "experience": "10 years in venture capital, previously at TechVentures"
     },
     {
       "id": "2",
@@ -23,17 +30,23 @@
       "email": "sarah@entrepreneur.com",
       "password": "Startup456!",
       "role": "entrepreneur",
-      "bio": "Founder of HealthAI",
+      "bio": "Founder of HealthAI, passionate about healthcare innovation",
       "startupName": "HealthAI",
-      "startupDescription": "AI-driven healthcare solutions",
+      "startupDescription": "AI-driven healthcare solutions for personalized medicine",
       "fundingNeed": 500000,
       "pitchDeck": "https://example.com/pitch.pdf",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150",
+      "location": "San Francisco",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/sarahwilson",
+        "twitter": "https://twitter.com/sarahwilson",
+        "website": "https://healthai.com"
+      },
+      "experience": "5 years as a healthcare entrepreneur, ex-MIT researcher",
       "industry": "HealthTech",
       "stage": "Seed",
-      "teamSize": 5,
-      "traction": "10k users",
-      "location": "San Francisco",
-      "avatar": "https://via.placeholder.com/150"
+      "traction": "10k active users",
+      "teamSize": 5
     },
     {
       "id": "3",
@@ -41,7 +54,7 @@
       "email": "jane@investor.com",
       "password": "Invest456!",
       "role": "investor",
-      "bio": "Investor in sustainable tech",
+      "bio": "Investor in sustainable tech with a focus on impact",
       "interests": [
         "GreenTech",
         "HealthTech"
@@ -49,7 +62,14 @@
       "portfolio": [
         "EcoStartup"
       ],
-      "avatar": "https://via.placeholder.com/150"
+      "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150",
+      "location": "New York",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/janesmith",
+        "twitter": "https://twitter.com/janesmith",
+        "website": "https://janesmith.com"
+      },
+      "experience": "8 years in impact investing, former ESG consultant"
     },
     {
       "id": "4",
@@ -57,17 +77,23 @@
       "email": "mike@entrepreneur.com",
       "password": "Startup789!",
       "role": "entrepreneur",
-      "bio": "Building FinTech solutions",
+      "bio": "Building FinTech solutions for the future of payments",
       "startupName": "PaySmart",
-      "startupDescription": "Next-gen payment platform",
+      "startupDescription": "Next-gen payment platform with blockchain integration",
       "fundingNeed": 750000,
       "pitchDeck": "https://example.com/pay.pdf",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150",
+      "location": "New York",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/mikebrown",
+        "twitter": "https://twitter.com/mikebrown",
+        "website": "https://paysmart.com"
+      },
+      "experience": "7 years in FinTech, ex-Goldman Sachs analyst",
       "industry": "FinTech",
       "stage": "Series A",
-      "teamSize": 8,
-      "traction": "50k transactions",
-      "location": "New York",
-      "avatar": "https://via.placeholder.com/150"
+      "traction": "50k transactions monthly",
+      "teamSize": 8
     },
     {
       "id": "5",
@@ -75,7 +101,7 @@
       "email": "alice@investor.com",
       "password": "Invest789!",
       "role": "investor",
-      "bio": "Early-stage investor",
+      "bio": "Early-stage investor with a focus on EdTech and AI",
       "interests": [
         "EdTech",
         "AI"
@@ -83,7 +109,14 @@
       "portfolio": [
         "LearnEasy"
       ],
-      "avatar": "https://via.placeholder.com/150"
+      "avatar": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150",
+      "location": "Boston",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/alicejohnson",
+        "twitter": "https://twitter.com/alicejohnson",
+        "website": "https://alicejohnson.com"
+      },
+      "experience": "12 years in angel investing, former startup founder"
     },
     {
       "id": "6",
@@ -91,17 +124,23 @@
       "email": "bob@entrepreneur.com",
       "password": "Startup123!",
       "role": "entrepreneur",
-      "bio": "Founder of EduPlatform",
+      "bio": "Founder of EduPlatform, revolutionizing online learning",
       "startupName": "EduPlatform",
-      "startupDescription": "Online learning platform",
+      "startupDescription": "Online learning platform with adaptive AI",
       "fundingNeed": 300000,
       "pitchDeck": "https://example.com/edu.pdf",
+      "avatar": "https://images.unsplash.com/photo-1506794778202-cbfcc65c5967?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150",
+      "location": "Boston",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/boblee",
+        "twitter": "https://twitter.com/boblee",
+        "website": "https://eduplatform.com"
+      },
+      "experience": "4 years in EdTech, ex-Google engineer",
       "industry": "EdTech",
       "stage": "Pre-Seed",
-      "teamSize": 3,
       "traction": "5k users",
-      "location": "Boston",
-      "avatar": "https://via.placeholder.com/150"
+      "teamSize": 3
     },
     {
       "id": "7",
@@ -109,7 +148,7 @@
       "email": "emma@investor.com",
       "password": "Invest101!",
       "role": "investor",
-      "bio": "Focused on biotech startups",
+      "bio": "Focused on biotech startups with global impact",
       "interests": [
         "BioTech",
         "HealthTech"
@@ -117,7 +156,14 @@
       "portfolio": [
         "BioCure"
       ],
-      "avatar": "https://via.placeholder.com/150"
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150",
+      "location": "San Diego",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/emmadavis",
+        "twitter": "https://twitter.com/emmadavis",
+        "website": "https://emmadavis.com"
+      },
+      "experience": "9 years in biotech investing, ex-Pfizer executive"
     },
     {
       "id": "8",
@@ -125,17 +171,23 @@
       "email": "tom@entrepreneur.com",
       "password": "Startup202!",
       "role": "entrepreneur",
-      "bio": "Building green energy solutions",
+      "bio": "Building green energy solutions for a sustainable future",
       "startupName": "GreenWave",
-      "startupDescription": "Renewable energy platform",
+      "startupDescription": "Renewable energy platform with solar and wind solutions",
       "fundingNeed": 1000000,
       "pitchDeck": "https://example.com/green.pdf",
+      "avatar": "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150",
+      "location": "Austin",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/tomclark",
+        "twitter": "https://twitter.com/tomclark",
+        "website": "https://greenwave.com"
+      },
+      "experience": "6 years in clean energy, ex-Tesla engineer",
       "industry": "GreenTech",
       "stage": "Series A",
-      "teamSize": 10,
       "traction": "100 MW installed",
-      "location": "Austin",
-      "avatar": "https://via.placeholder.com/150"
+      "teamSize": 10
     },
     {
       "id": "9",
@@ -143,7 +195,7 @@
       "email": "lisa@investor.com",
       "password": "Invest303!",
       "role": "investor",
-      "bio": "Angel investor in tech",
+      "bio": "Angel investor in tech with a focus on SaaS",
       "interests": [
         "FinTech",
         "SaaS"
@@ -151,7 +203,14 @@
       "portfolio": [
         "PayNow"
       ],
-      "avatar": "https://via.placeholder.com/150"
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150",
+      "location": "Chicago",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/lisawhite",
+        "twitter": "https://twitter.com/lisawhite",
+        "website": "https://lisawhite.com"
+      },
+      "experience": "15 years in tech investing, ex-Amazon manager"
     },
     {
       "id": "10",
@@ -159,74 +218,80 @@
       "email": "sam@entrepreneur.com",
       "password": "Startup404!",
       "role": "entrepreneur",
-      "bio": "Founder of FoodTech",
+      "bio": "Founder of FoodTech, innovating sustainable food delivery",
       "startupName": "FoodTech",
-      "startupDescription": "Sustainable food delivery",
+      "startupDescription": "Sustainable food delivery with eco-friendly packaging",
       "fundingNeed": 400000,
       "pitchDeck": "https://example.com/food.pdf",
+      "avatar": "https://images.unsplash.com/photo-1503437313881-503a91226402?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150",
+      "location": "Chicago",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/samgreen",
+        "twitter": "https://twitter.com/samgreen",
+        "website": "https://foodtech.com"
+      },
+      "experience": "5 years in food industry, ex-Uber Eats lead",
       "industry": "FoodTech",
       "stage": "Seed",
-      "teamSize": 6,
-      "traction": "20k orders",
-      "location": "Chicago",
-      "avatar": "https://via.placeholder.com/150"
+      "traction": "20k orders monthly",
+      "teamSize": 6
     }
   ],
   "requests": [
     {
       "id": "1",
-      "investorId": 1,
-      "entrepreneurId": 2,
+      "investorId": "1",
+      "entrepreneurId": "2",
       "investorName": "John Doe",
       "profileSnippet": "Interested in your startup",
-      "status": "Accepted"
+      "status": "Pending"
     },
     {
       "id": "2",
-      "investorId": 3,
-      "entrepreneurId": 2,
+      "investorId": "3",
+      "entrepreneurId": "2",
       "investorName": "Jane Smith",
       "profileSnippet": "Excited about HealthAI",
       "status": "Accepted"
     },
     {
       "id": "3",
-      "investorId": 1,
-      "entrepreneurId": 4,
+      "investorId": "1",
+      "entrepreneurId": "4",
       "investorName": "John Doe",
       "profileSnippet": "Interested in PaySmart",
       "status": "Pending"
     },
     {
       "id": "4",
-      "investorId": 3,
-      "entrepreneurId": 4,
+      "investorId": "3",
+      "entrepreneurId": "4",
       "investorName": "Jane Smith",
       "profileSnippet": "Exploring FinTech",
       "status": "Rejected"
     },
     {
       "id": "5",
-      "investorId": 5,
-      "entrepreneurId": 2,
+      "investorId": "5",
+      "entrepreneurId": "2",
       "investorName": "Alice Johnson",
       "profileSnippet": "Interested in HealthAI",
-      "status": "Rejected"
+      "status": "Pending"
     },
     {
       "id": "6",
-      "investorId": 7,
-      "entrepreneurId": 2,
+      "investorId": "7",
+      "entrepreneurId": "2",
       "investorName": "Emma Davis",
       "profileSnippet": "Excited about healthcare solutions",
-      "status": "Accepted"
+      "status": "Pending"
     }
   ],
   "messages": [
     {
       "id": "1",
       "chatId": "1-2",
-      "senderId": 1,
+      "senderId": "1",
       "senderName": "John Doe",
       "text": "Hi Sarah, interested in HealthAI!",
       "timestamp": "2025-07-12T00:30:00Z"
@@ -234,7 +299,7 @@
     {
       "id": "2",
       "chatId": "1-2",
-      "senderId": 2,
+      "senderId": "2",
       "senderName": "Sarah Wilson",
       "text": "Thanks, John! Let's discuss details.",
       "timestamp": "2025-07-12T00:35:00Z"

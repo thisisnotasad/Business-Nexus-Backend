@@ -12,7 +12,19 @@ const userSchema = new mongoose.Schema({
   startupName: { type: String },
   startupDescription: { type: String },
   fundingNeed: { type: Number },
-  pitchDeck: { type: String }
+  pitchDeck: { type: String },
+  avatar: { type: String, default: 'https://images.unsplash.com/photo-1502685104226-ee32379f453f?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150' },
+  location: { type: String },
+  socialLinks: {
+    linkedin: { type: String },
+    twitter: { type: String },
+    website: { type: String }
+  },
+  experience: { type: String },
+  industry: { type: String },
+  stage: { type: String, enum: ['Pre-Seed', 'Seed', 'Series A', 'Series B'], default:null },
+  traction: { type: String },
+  teamSize: { type: Number }
 });
 
 module.exports = mongoose.model('User', userSchema);

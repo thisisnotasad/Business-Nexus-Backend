@@ -8,6 +8,7 @@ router.get('/', async (req, res) => {
     const requests = await Request.find();
     res.json(requests);
   } catch (err) {
+    console.error('Error fetching requests:', err);
     res.status(500).json({ error: 'Server error' });
   }
 });
@@ -19,6 +20,7 @@ router.get('/:id', async (req, res) => {
     if (!request) return res.status(404).json({ error: 'Request not found' });
     res.json(request);
   } catch (err) {
+    console.error(`Error fetching request ${req.params.id}:`, err);
     res.status(500).json({ error: 'Server error' });
   }
 });
@@ -30,6 +32,7 @@ router.post('/', async (req, res) => {
     await request.save();
     res.status(201).json(request);
   } catch (err) {
+    console.error('Error creating request:', err);
     res.status(400).json({ error: err.message });
   }
 });
@@ -37,14 +40,20 @@ router.post('/', async (req, res) => {
 // PUT update a request
 router.put('/:id', async (req, res) => {
   try {
+    console.log('PUT request received for ID:', req.params.id, 'Body:', req.body);
     const request = await Request.findOneAndUpdate(
       { id: req.params.id },
       req.body,
       { new: true, runValidators: true }
     );
-    if (!request) return res.status(404).json({ error: 'Request not found' });
+    if (!request) {
+      console.error(`Request with ID ${req.params.id} not found`);
+      return res.status(404).json({ error: 'Request not found' });
+    }
+    console.log('Updated request:', request);
     res.json(request);
   } catch (err) {
+    console.error(`Error updating request ${req.params.id}:`, err);
     res.status(400).json({ error: err.message });
   }
 });
@@ -56,6 +65,7 @@ router.delete('/:id', async (req, res) => {
     if (!request) return res.status(404).json({ error: 'Request not found' });
     res.json({ message: 'Request deleted' });
   } catch (err) {
+    console.error(`Error deleting request ${req.params.id}:`, err);
     res.status(500).json({ error: 'Server error' });
   }
 });
