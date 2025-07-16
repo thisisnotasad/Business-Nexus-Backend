@@ -287,22 +287,32 @@
       "status": "Pending"
     }
   ],
+  "collaborations": [
+    {
+      "id": "collab1",
+      "requesterId": "1",
+      "recipientId": "2",
+      "chatId": "chat1",
+      "status": "accepted",
+      "createdAt": "2025-07-15T12:00:00Z"
+    }
+  ],
   "messages": [
     {
-      "id": "1",
-      "chatId": "1-2",
+      "id": "msg1",
+      "chatId": "chat1",
       "senderId": "1",
       "senderName": "John Doe",
-      "text": "Hi Sarah, interested in HealthAI!",
-      "timestamp": "2025-07-12T00:30:00Z"
+      "text": "Hi Sarah, excited to discuss your startup!",
+      "timestamp": "2025-07-15T12:05:00Z"
     },
     {
-      "id": "2",
-      "chatId": "1-2",
+      "id": "msg2",
+      "chatId": "chat1",
       "senderId": "2",
-      "senderName": "Sarah Wilson",
-      "text": "Thanks, John! Let's discuss details.",
-      "timestamp": "2025-07-12T00:35:00Z"
+      "senderName": "Sarah Smith",
+      "text": "Thanks John! Looking forward to it.",
+      "timestamp": "2025-07-15T12:10:00Z"
     }
   ]
 }

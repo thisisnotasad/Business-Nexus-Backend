@@ -4,6 +4,8 @@ const User = require('./models/User');
 const Request = require('./models/Request');
 const Message = require('./models/Message');
 const data = require('./data/data.json');
+const Collaboration = require("./models/Collaboration");
+
 
 // Load environment variables
 dotenv.config();
@@ -17,8 +19,13 @@ mongoose.connect(process.env.MONGODB_URI)
     await User.deleteMany({});
     await Request.deleteMany({});
     await Message.deleteMany({});
+    await Collaboration.deleteMany({});
+    
 
     // Insert data
+    await Collaboration.insertMany(data.collaborations);
+        console.log("Seeded collaborations:", data.collaborations.length);
+    
     await User.insertMany(data.users);
     await Request.insertMany(data.requests);
     await Message.insertMany(data.messages.map(msg => ({
