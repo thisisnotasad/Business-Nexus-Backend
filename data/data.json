@@ -252,7 +252,7 @@
       "entrepreneurId": "2",
       "investorName": "Jane Smith",
       "profileSnippet": "Excited about HealthAI",
-      "status": "Accepted"
+      "status": "Pending"
     },
     {
       "id": "3",
@@ -268,7 +268,7 @@
       "entrepreneurId": "4",
       "investorName": "Jane Smith",
       "profileSnippet": "Exploring FinTech",
-      "status": "Rejected"
+      "status": "Pending"
     },
     {
       "id": "5",
@@ -294,6 +294,14 @@
       "recipientId": "2",
       "chatId": "chat1",
       "status": "accepted",
+      "createdAt": "2025-07-15T12:00:00Z"
+    },
+    {
+      "id": "collab2",
+      "requesterId": "2",
+      "recipientId": "3",
+      "chatId": "chat2",
+      "status": "pending",
       "createdAt": "2025-07-15T12:00:00Z"
     }
   ],

@@ -76,4 +76,41 @@ router.put("/:id", async (req, res) => {
   }
 });
 
+
+router.put("/:id/accept", async (req, res) => {
+try {
+const { id: userId } = req.body; // Assuming userId from auth middleware
+const collaboration = await Collaboration.findOne({ _id: req.params.id });
+if (!collaboration) return res.status(404).json({ error: "Collaboration not found" });
+if (collaboration.status !== "pending") return res.status(400).json({ error: "Already processed" });
+if (collaboration.requesterId !== userId && collaboration.recipientId !== userId) {
+return res.status(403).json({ error: "Unauthorized" });
+}
+
+// Update to accepted and remove duplicates
+await Collaboration.updateOne(
+{ chatId: collaboration.chatId },
+{ status: "accepted", updatedAt: new Date() },
+{ upsert: true }
+);
+
+io.emit("collaborationUpdated", { userId: collaboration.requesterId });
+io.emit("collaborationUpdated", { userId: collaboration.recipientId });
+
+await Collaboration.deleteMany({
+chatId: collaboration.chatId,
+status: { $in: ["pending", "rejected"] },
+_id: { $ne: collaboration._id },
+});
+
+res.status(200).json({ message: "Collaboration accepted", chatId: collaboration.chatId });
+} catch (err) {
+console.error("Error accepting collaboration:", err);
+res.status(500).json({ error: "Server error" });
+}
+});
+
+
+
+
 module.exports = router;

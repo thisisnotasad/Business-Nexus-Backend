@@ -20,20 +20,34 @@ mongoose.connect(process.env.MONGODB_URI)
     await Request.deleteMany({});
     await Message.deleteMany({});
     await Collaboration.deleteMany({});
-    
+    console.log("Cleared existing data");
 
-    // Insert data
+
+
+    // Insert Collaborations
     await Collaboration.insertMany(data.collaborations);
-        console.log("Seeded collaborations:", data.collaborations.length);
+    console.log("Seeded collaborations:", data.collaborations.length);
     
+    // Insert Users 
     await User.insertMany(data.users);
+    console.log("Seeded users:", data.users.length);
+
+    // Insert Requests
     await Request.insertMany(data.requests);
+    console.log("Seeded requests:", data.requests.length);
+
+    // Insert Messages
     await Message.insertMany(data.messages.map(msg => ({
       ...msg,
       senderId: String(msg.senderId), // Ensure senderId is string
       timestamp: new Date(msg.timestamp) // Convert timestamp to Date
     })));
+    console.log("Seeded messages:", data.messages.length);
+    
+    // Show confimation
+    console.log("Database seeded successfully");
 
+    // Finall
     console.log('Data imported successfully');
     mongoose.connection.close();
   })
