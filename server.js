@@ -20,20 +20,22 @@ dotenv.config();
 const app = express();
 const server = http.createServer(app);
 
-// Configure Socket.IO with CORS for development and production
+// Configure Socket.IO with CORS
 const io = new Server(server, {
   cors: {
     origin: [
-      "http://localhost:5173", // Vite dev server
-      "https://business-nexus-phi.vercel.app", // Vercel production
-      "https://business-nexuss.netlify.app", // Netlify production
+      "http://localhost:5173",
+      "https://business-nexus-phi.vercel.app",
+      "https://business-nexuss.netlify.app",
     ],
     methods: ["GET", "POST"],
     credentials: true,
   },
 });
 
-// Middleware for CORS and JSON parsing
+app.set("io", io);
+
+// Middleware
 app.use(
   cors({
     origin: [
@@ -48,15 +50,29 @@ app.use(
 );
 app.use(express.json());
 
-// Connect to MongoDB with retry mechanism
+// Debug middleware for all routes
+app.use((req, res, next) => {
+  console.log(`Request: ${req.method} ${req.url}`);
+  next();
+});
+
+// API routes
+app.use("/messages", messageRoutes);
+app.use("/users", userRoutes);
+app.use("/requests", requestRoutes);
+app.use("/collaborations", collaborationRoutes);
+
+// Root endpoint
+app.get("/", (req, res) => {
+  res.json({ message: "Welcome to the Startup Platform API" });
+});
+
+// Connect to MongoDB
 const connectDB = async () => {
   let retries = 5;
   while (retries) {
     try {
-      await mongoose.connect(process.env.MONGODB_URI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      });
+      await mongoose.connect(process.env.MONGODB_URI);
       console.log("Connected to MongoDB");
       break;
     } catch (err) {
@@ -67,50 +83,44 @@ const connectDB = async () => {
         process.exit(1);
       }
       console.log(`Retrying MongoDB connection (${retries} attempts left)...`);
-      await new Promise((resolve) => setTimeout(resolve, 5000)); // Wait 5 seconds before retry
+      await new Promise((resolve) => setTimeout(resolve, 5000));
     }
   }
 };
 connectDB();
 
-// Handle Socket.IO connections
+// Socket.IO handlers
 io.on("connection", (socket) => {
   console.log("Socket connected:", socket.id);
 
-  // Handle incoming messages
   socket.on("message", async (msg) => {
     try {
-      // Save message to MongoDB, using client-provided ID
       const message = new Message({
         ...msg,
-        timestamp: new Date(msg.timestamp), // Ensure timestamp is a Date object
+        id: msg.id || require("uuid").v4(), // Use client ID if provided, else generate
+        timestamp: new Date(msg.timestamp),
       });
       await message.save();
       console.log("Message saved:", message);
-      // Broadcast message to the chat room
       io.emit(`chat:${msg.chatId}`, message);
     } catch (err) {
       console.error("Error saving message:", err.message);
-      // Notify client of error
       socket.emit("message_error", {
         error: "Failed to save message. Please try again.",
       });
     }
   });
 
-  // Handle typing events
-  socket.on("typing", ({ chatId }) => {
-    console.log(`Typing in chat:${chatId}`);
-    socket.broadcast.emit(`typing:${chatId}`);
+  socket.on("typing", ({ chatId, userId, userName }) => {
+    console.log(`Typing in chat:${chatId} by ${userName}`);
+    socket.broadcast.emit(`typing:${chatId}`, { userId, userName });
   });
 
-  // Handle stop typing events
-  socket.on("stopTyping", ({ chatId }) => {
-    console.log(`Stopped typing in chat:${chatId}`);
-    socket.broadcast.emit(`stopTyping:${chatId}`);
+  socket.on("stopTyping", ({ chatId, userId, userName }) => {
+    console.log(`Stopped typing in chat:${chatId} by ${userName}`);
+    socket.broadcast.emit(`stopTyping:${chatId}`, { userId, userName });
   });
 
-  // Handle message read events
   socket.on("read", async ({ messageId, chatId }) => {
     try {
       const message = await Message.findOneAndUpdate(
@@ -135,24 +145,12 @@ io.on("connection", (socket) => {
     }
   });
 
-  // Handle disconnection
   socket.on("disconnect", () => {
     console.log("Socket disconnected:", socket.id);
   });
 });
 
-// API routes
-app.use("/users", userRoutes);
-app.use("/requests", requestRoutes);
-app.use("/messages", messageRoutes);
-app.use("/collaborations", collaborationRoutes);
-
-// Root endpoint
-app.get("/", (req, res) => {
-  res.json({ message: "Welcome to the Startup Platform API" });
-});
-
-// Start the server
+// Start server
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

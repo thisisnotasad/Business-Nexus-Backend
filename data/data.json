@@ -239,20 +239,12 @@
   ],
   "requests": [
     {
-      "id": "1",
-      "investorId": "1",
-      "entrepreneurId": "2",
-      "investorName": "John Doe",
-      "profileSnippet": "Interested in your startup",
-      "status": "Pending"
-    },
-    {
       "id": "2",
       "investorId": "3",
       "entrepreneurId": "2",
       "investorName": "Jane Smith",
       "profileSnippet": "Excited about HealthAI",
-      "status": "Pending"
+      "status": "pending"
     },
     {
       "id": "3",
@@ -260,7 +252,7 @@
       "entrepreneurId": "4",
       "investorName": "John Doe",
       "profileSnippet": "Interested in PaySmart",
-      "status": "Pending"
+      "status": "pending"
     },
     {
       "id": "4",
@@ -268,7 +260,7 @@
       "entrepreneurId": "4",
       "investorName": "Jane Smith",
       "profileSnippet": "Exploring FinTech",
-      "status": "Pending"
+      "status": "pending"
     },
     {
       "id": "5",
@@ -276,7 +268,7 @@
       "entrepreneurId": "2",
       "investorName": "Alice Johnson",
       "profileSnippet": "Interested in HealthAI",
-      "status": "Pending"
+      "status": "pending"
     },
     {
       "id": "6",
@@ -284,7 +276,7 @@
       "entrepreneurId": "2",
       "investorName": "Emma Davis",
       "profileSnippet": "Excited about healthcare solutions",
-      "status": "Pending"
+      "status": "pending"
     }
   ],
   "collaborations": [
@@ -294,14 +286,6 @@
       "recipientId": "2",
       "chatId": "chat1",
       "status": "accepted",
-      "createdAt": "2025-07-15T12:00:00Z"
-    },
-    {
-      "id": "collab2",
-      "requesterId": "2",
-      "recipientId": "3",
-      "chatId": "chat2",
-      "status": "pending",
       "createdAt": "2025-07-15T12:00:00Z"
     }
   ],
