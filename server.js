@@ -64,7 +64,7 @@ app.use("/collaborations", collaborationRoutes);
 
 // Root endpoint
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to the Startup Platform API" });
+  res.json({ message: "Welcome to the Business Nexus API" });
 });
 
 // Connect to MongoDB
