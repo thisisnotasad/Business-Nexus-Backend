@@ -7,12 +7,50 @@ const { v4: uuidv4 } = require("uuid");
 
 router.get("/", async (req, res) => {
   try {
-    const { userId, status } = req.query;
-    console.log("GET /requests query:", { userId, status });
-    if (!userId) {
-      console.error("Missing userId in query");
-      return res.status(400).json({ error: "userId is required" });
+    const { userId, investorId, entrepreneurId, status } = req.query;
+    console.log("GET /requests raw query:", req.query); // Log raw query
+    console.log("GET /requests parsed:", { userId, investorId, entrepreneurId, status });
+
+    // Handle specific investorId and entrepreneurId query
+    if (investorId && entrepreneurId) {
+      console.log("Processing investorId/entrepreneurId query");
+      const query = {
+        investorId: String(investorId),
+        entrepreneurId: String(entrepreneurId),
+      };
+      if (status) {
+        query.status = { $regex: `^${status}$`, $options: "i" };
+      } else {
+        query.status = "pending";
+      }
+      console.log("MongoDB query (specific pair):", JSON.stringify(query, null, 2));
+      const requests = await Request.find(query);
+      console.log("Found requests:", JSON.stringify(requests, null, 2));
+
+      const enrichedRequests = await Promise.all(
+        requests.map(async (req) => {
+          const investor = await User.findOne({ id: req.investorId }).select("id name role avatar");
+          const entrepreneur = await User.findOne({ id: req.entrepreneurId }).select("id name role avatar");
+          if (!investor || !entrepreneur) {
+            console.error(`User not found: investorId=${req.investorId}, entrepreneurId=${req.entrepreneurId}`);
+          }
+          return {
+            ...req._doc,
+            investor: investor || {},
+            entrepreneur: entrepreneur || {},
+          };
+        })
+      );
+
+      return res.json(enrichedRequests);
     }
+
+    // Existing userId query logic
+    if (!userId) {
+      console.error("Missing required query parameters");
+      return res.status(400).json({ error: "userId or both investorId and entrepreneurId are required" });
+    }
+    console.log("Processing userId query");
     const query = {
       $or: [{ investorId: String(userId) }, { entrepreneurId: String(userId) }],
     };
@@ -21,7 +59,7 @@ router.get("/", async (req, res) => {
     } else {
       query.status = "pending";
     }
-    console.log("MongoDB query:", JSON.stringify(query, null, 2));
+    console.log("MongoDB query (userId):", JSON.stringify(query, null, 2));
     const requests = await Request.find(query);
     console.log("Found requests:", JSON.stringify(requests, null, 2));
 
