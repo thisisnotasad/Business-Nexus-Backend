@@ -67,6 +67,11 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to the Business Nexus API" });
 });
 
+app.get('/healthz', (req, res) => {
+    res.status(200).send('OK');
+});
+
+
 // Connect to MongoDB
 const connectDB = async () => {
   let retries = 5;
